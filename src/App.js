@@ -1,30 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
 import reactDom from 'react-dom';
 
-const hour = new Date(2021,1,1,20).getHours()
+const hour = new Date().getHours()
 
 var hello = "";
 
 const style = {
-  color: "red"
+  color: "white"
 };
 
 if(hour < 12){
-  hello = "Good morning";
+  hello = "Good Morning";
   style.color="red";
+
 } else if(hour < 18){
   hello = "Good Afternoon"
   style.color="green";
+
 } else {
   hello = "Good Night"
   style.color ="blue";
 }
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-    <h1 className="{style}">{hello}</h1>
+    <h1 style={style}>{hello}</h1>
     </div>
   );
 }
